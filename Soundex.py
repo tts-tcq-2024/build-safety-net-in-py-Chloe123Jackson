@@ -10,7 +10,7 @@ def get_soundex_code(c):
     }
     return mapping.get(c, '0')  # Default to '0' for non-mapped characters
 
-def get_code(name,prev_code,soundex)
+def get_code(name,prev_code,soundex):
     for char in name[1:]:
         code = get_soundex_code(char)
         if code != '0' and code != prev_code:
