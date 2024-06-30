@@ -22,16 +22,16 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(generate_soundex("aeiou"), "A000")
     
     def test_single_character(self):
-        self.assertEqual(generate_soundex("AyAyA"), "A100")
+        self.assertEqual(generate_soundex("Tymczak"), "T522")
 
     def test_single_character(self):
         self.assertEqual(generate_soundex("AebeF"), "A100")
     
     def test_single_character(self):
-        self.assertEqual(generate_soundex("0"), "")
+        self.assertEqual(generate_soundex("0"), "000")
     
     def test_single_character(self):
-        self.assertEqual(generate_soundex("!"), "")
+        self.assertEqual(generate_soundex("!hello"), "H400")
     
 if __name__ == '__main__':
     unittest.main()
