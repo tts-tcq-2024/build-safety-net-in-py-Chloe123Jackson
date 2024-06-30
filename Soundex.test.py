@@ -33,5 +33,8 @@ class TestSoundex(unittest.TestCase):
     def test_starts_special_char(self):
         self.assertEqual(generate_soundex("!hello"), "H400")
     
+    def test_ends_special_char(self):
+        self.assertEqual(generate_soundex("hel!lo"), "H400")
+    
 if __name__ == '__main__':
     unittest.main()
