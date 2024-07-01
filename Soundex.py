@@ -13,7 +13,7 @@ def get_soundex_code(c):
 def truncate(soundex):
     if len(soundex)>4:
         soundex=soundex[0:3]
-    if len(soundex)<3:
+    else:
         soundex=soundex.ljust(4,'0')
     return soundex
 
