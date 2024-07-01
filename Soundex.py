@@ -21,7 +21,7 @@ def set_soundex_char(code,prev_code,soundex):
     if code!='0' and code !=prev_code:
         soundex += code
         prev_code = code
-    return soundex
+    return soundex,prev_code
 
 def generate_soundex(name):
     if not name:
