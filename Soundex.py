@@ -24,10 +24,11 @@ def generate_soundex(name):
     # Start with the first letter (capitalized)
     soundex = name[0].upper()
     prev_code = get_soundex_code(soundex)
+    l=['0',prev_code]
 
     while char in name[1:]:
         code = get_soundex_code(char)
-        if code != '0' and code != prev_code:
+        if code not in l:
             soundex += code
             prev_code = code
 
