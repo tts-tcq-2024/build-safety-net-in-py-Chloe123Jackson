@@ -17,7 +17,7 @@ def truncate(soundex):
         soundex=soundex.ljust(4,'0')
     return soundex
 
-def set_soundex_char(code,prev_code):
+def set_soundex_char(code,prev_code,soundex):
     if code!='0' and code !=prev_code:
         soundex += code
         prev_code = code
