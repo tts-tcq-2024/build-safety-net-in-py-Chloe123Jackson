@@ -19,16 +19,11 @@ def generate_soundex(name):
     soundex = name[0].upper()
     prev_code = get_soundex_code(soundex)
 
-    x=[get_soundex_code(char) for char in name[1:] if (get_soundex_code(char)!=0 and get_soundex_code(char)!=prev_code)]
-
-
-    # for char in name[1:]:
-    #     code = get_soundex_code(char)
-    #     if code != '0' and code != prev_code:
-    #         soundex += code
-    #         prev_code = code
-    #     if len(soundex) == 4:
-    #         break
+    while (len(soundex)<=4 and char in name[1:]):
+        code = get_soundex_code(char)
+        if code != '0' and code != prev_code:
+            soundex += code
+            prev_code = code
 
     # Pad with zeros if necessary
     soundex = soundex.ljust(4, '0')
