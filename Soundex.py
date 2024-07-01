@@ -33,7 +33,7 @@ def generate_soundex(name):
 
     for char in name[1:]:
         code = get_soundex_code(char)
-        soundex,prev_code=set_soundex_char(soundex,prev_code)            
+        soundex,prev_code=set_soundex_char(code,prev_code,soundex)            
 
     soundex=truncate(soundex)
     # # Pad with zeros if necessary
