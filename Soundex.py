@@ -18,9 +18,10 @@ def truncate(soundex):
     return soundex
 
 def set_soundex_char(soundex,prev_code):
-    if code!='0' and code !=prev_code:
-        soundex += code
-        prev_code = code
+    if code!='0':
+        if code !=prev_code:
+            soundex += code
+            prev_code = code
 
 def generate_soundex(name):
     if not name:
