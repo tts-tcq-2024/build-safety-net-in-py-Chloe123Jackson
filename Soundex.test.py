@@ -28,7 +28,7 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(generate_soundex("AebeF"), "A100")
     
     def test_digits(self):
-        self.assertEqual(generate_soundex("0"), "000")
+        self.assertEqual(generate_soundex("0"), "0000")
     
     def test_starts_special_char(self):
         self.assertEqual(generate_soundex("!hello"), "H400")
