@@ -17,6 +17,11 @@ def truncate(soundex):
         soundex=soundex.ljust(4,'0')
     return soundex
 
+def set_soundex_char(soundex,prev_code):
+    if code!='0' and code !=prev_code:
+        soundex += code
+        prev_code = code
+
 def generate_soundex(name):
     if not name:
         return ""
@@ -24,13 +29,10 @@ def generate_soundex(name):
     # Start with the first letter (capitalized)
     soundex = name[0].upper()
     prev_code = get_soundex_code(soundex)
-    l=['0',prev_code]
 
     while char in name[1:]:
         code = get_soundex_code(char)
-        if code not in l:
-            soundex += code
-            prev_code = code
+        soundex,prev_code=set_soundex_char(soundex,prev_code)            
 
     soundex=truncate(soundex)
     # # Pad with zeros if necessary
