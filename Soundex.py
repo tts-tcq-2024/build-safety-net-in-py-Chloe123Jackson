@@ -49,7 +49,7 @@ def get_soundex_code(c):
 
 #     return soundex
 
-  def generate_soundex(name):
+def generate_soundex(name):
     if not name:
         return ""
 
