@@ -10,12 +10,12 @@ def get_soundex_code(c):
     }
     return mapping.get(c, '0')  # Default to '0' for non-mapped characters
 
-# def truncate(soundex):
-#     if len(soundex)>4:
-#         soundex=soundex[0:3]
-#     else:
-#         soundex=soundex.ljust(4,'0')
-#     return soundex
+def truncate(soundex):
+    if len(soundex)>4:
+        soundex=soundex[0:3]
+    else:
+        soundex=soundex.ljust(4,'0')
+    return soundex
 
 # def set_soundex_char(code,prev_code,soundex):
 #     if code!='0' and code !=prev_code:
@@ -61,11 +61,6 @@ def generate_soundex(name):
         code = get_soundex_code(char)
         if code != '0' and code != prev_code:
             soundex += code
-            prev_code = code
-        if len(soundex) == 4:
-            break
-
-    # Pad with zeros if necessary
-    soundex = soundex.ljust(4, '0')
-
+            prev_code = code            
+    soundex=truncate(soundex)
     return soundex
