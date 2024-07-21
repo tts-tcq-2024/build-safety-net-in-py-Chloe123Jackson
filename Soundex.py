@@ -22,7 +22,7 @@ def set_soundex_char(code,prev_code,soundex,pprev_code):
         soundex += code
         pprev_code=prev_code
         prev_code = code
-    return soundex,prev_code
+    return soundex,prev_code,pprev_code
 
 def generate_soundex(name):
     if not name:
@@ -35,6 +35,6 @@ def generate_soundex(name):
 
     for char in name[1:]:
         code = get_soundex_code(char)
-        soundex,prev_code=set_soundex_char(code,prev_code,soundex,pprev_code)            
+        soundex,prev_code,pprev_code=set_soundex_char(code,prev_code,soundex,pprev_code)            
     soundex=truncate(soundex)
     return soundex
